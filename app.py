@@ -7,9 +7,15 @@ def searchYourWord(w):
     if w in data:
         return data[w]
     elif len(get_close_matches(w,data.keys())) > 0:
-        return "Did you mean %s instead?" % get_close_matches(w,data.keys())[0]   
+        yn = input("Did you mean %s instead? Enter Y if yes, or N if no:" % get_close_matches(w,data.keys())[0])
+        if yn == "Y":
+            return data[get_close_matches(w,data.keys())[0]]
+        elif yn == "N":
+             return "The word doesn't exist. Please double check it."
+        else:
+             return "word doesn't exist in dictionary......"    
     else:
-        return "word is not matching with dictionary"
+        return "word doesn't exist in dictionary."
     
 
 textWord=input("Enter your word: ")
