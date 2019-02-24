@@ -19,6 +19,13 @@ def searchYourWord(w):
     
 
 textWord=input("Enter your word: ")
-print(searchYourWord(textWord))
+
+resultdata=searchYourWord(textWord)
+
+if type(resultdata)==list:
+   for item in resultdata:
+         print(item)
+else:
+    print(resultdata)
 
   
